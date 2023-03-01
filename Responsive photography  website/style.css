@@ -1,0 +1,724 @@
+:root{
+    --color-1: #0084ff;
+    --color-2: #ff006a;
+    --color-3:#010021;
+    --color-4:#15003e; 
+    --color-5:#002e33;
+    --color-6:#130029;
+    --color-light: #cad7ebad;
+    --color-white: white;
+
+    --transition:.4s ease all ;
+}
+
+/*........... CUSTOM CSS START......... */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+    letter-spacing: .4px;  
+    scroll-behavior: smooth;  
+    line-height: 1.7;
+    transition: var(--transition);
+}
+body{
+    background: var(--color-3) url(img/shape.png);
+}
+h1,h2{
+    line-height: 1.1;
+    font-weight: 400;
+}
+h1{
+    color: var(--color-white);
+    font-size: 4rem;
+}
+h2{
+   font-size: 3.5rem;
+}
+a{
+    color: var(--color-light);
+}
+a:hover{
+    color: var(--color-2);
+}
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+/*........... CUSTOM CSS END......... */
+
+
+/*............... START NAVBAR ................. */
+nav{
+    height: 5rem;
+    width: 100vw;
+    display: grid;
+    place-items: center ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+}
+.nav-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-container .logo h2{
+    font-size: 1.5rem;
+    color: var(--color-white)
+}
+.nav-container .logo h2 span{
+    color: var(--color-2);
+}
+.nav-link{
+    display: flex;
+    gap: 4rem;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.nav-social{
+    display: flex;
+    margin: 0;
+    gap: 1rem;
+}
+.nav-social .social-icon{
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+    padding: .5rem;
+    background: linear-gradient(var(--color-1), var(--color-4));
+    border-radius: 50%;
+}
+.nav-social .social-icon:hover{
+    background: linear-gradient(var(--color-2), var(--color-4)); 
+}
+.nav-scroll{
+    background: var(--color-4);
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.3);
+    border-bottom: var(--color-1) 1px dotted;
+}
+
+/*................ END NAVBAR .................. */
+
+
+/*................ START HEADER SECTION  .................. */
+header{
+    height: 100vh;
+    max-width: 100vw;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(var(--color-3), var(--color-5)) ;    
+}
+.header-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    gap: 10%;
+    margin-top: 10rem;
+}
+.hero-img-bg{
+    height: 22rem;
+    width: 16rem;
+    background: var(--color-2);
+    position: absolute;
+}
+.hero-img-lg{
+    position: relative;
+    width: 29rem;
+    top: 1rem;
+    left: 1rem;
+    filter: saturate(0) brightness(0.3);
+}
+.hero-img-sm{
+    height: 28rem;
+    width: 28rem;
+    overflow: hidden;
+    top: 6rem;
+    left: 6rem;
+    position: absolute;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+.header-left-content:hover .hero-img-sm{
+    opacity: 0;
+}
+.header-left-content:hover .hero-img-lg{
+    filter: saturate(1) brightness(1);
+    border: 1rem solid var(--color-1); 
+    top: 0;
+    left: 0;
+}
+.header-right-top{
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.em{
+    width: 18rem;
+    height: 3.5rem;
+    background: var(--color-3);
+    border-radius: calc(3.5rem / 2); 
+    box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.3);  
+    border: 1px solid var(--color-6);
+}
+.header-tag{
+    color: var(--color-1);
+}
+.header-container h1{
+    margin-top: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
+
+}
+.header-container p{
+    margin-top: 2rem;
+    width: 85%;
+    color: var(--color-light);
+    font-size: 16px;
+}
+.header-btn-mid{
+    display: none;
+}
+/*................ END HEADER SECTION .................. */
+
+/*................ START FRAME  .................. */
+.frames-container{
+    position: relative;
+}
+.frames{
+    position: absolute;   
+    left: 50%; 
+    height: max-content;
+    display: flex;
+    margin-top: -4rem;   
+}
+.header-frame{
+    width: 12rem;
+    position: absolute;    
+    border: .4rem var(--color-2) solid;
+    transform: rotate(-10deg);
+    transform-origin: bottom left;
+}
+.header-frame:nth-child(2){
+    transform: rotate(20deg);
+    top: -2rem;
+    left: 2rem;
+}
+.frames:hover .header-frame{
+    transform:  rotate(0);  
+    border: .4rem var(--color-1) solid;  
+}
+.frames:hover .header-frame:nth-child(2){
+   top: 0; 
+   left: 14rem;
+}
+
+.contact-btn-lg{
+    right: 0;
+    position: absolute;
+    width: 9rem;
+    height: 9rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+.header-btn-lg{
+    background: linear-gradient(var(--color-2), var(--color-5));
+    margin-top: -5rem;
+}
+.header-btn-lg:hover{
+    margin-top: -6rem;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+}
+.contact-btn-lg i{
+    font-size: 3rem;
+    color: var(--color-1);
+    position: absolute;  
+}
+.contact-btn-lg p{
+    font-size: 1rem;
+    font-weight: 600;
+    width: 9rem;
+    height: 9rem;   
+    text-transform: uppercase;  
+    display: flex;
+    justify-content: center; 
+    animation: animation-text 20s linear infinite; 
+}
+
+.contact-btn-lg p span{
+    position: absolute;
+    transform-origin: 0.3rem 4.5rem;
+}
+@keyframes animation-text {
+    to{
+        transform: rotate(360deg);
+    }    
+}
+/*................ END FRAME  .................. */
+
+
+
+/* .................START ABOUT SECTION..................  */
+#About{
+    margin-top: 18rem;
+}
+.about-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 10rem 26rem auto;
+    gap: 3rem;
+}
+.about-title{
+   width: max-content;
+    margin-top: -7rem;
+    z-index: 1;
+    color: var(--color-1);
+    font-family: 'Trebuchet MS';   
+}
+.about-btn-lg{
+    bottom: 0;
+    left: 0;
+}
+.about-img{
+    position: relative;
+}
+.about-img-bg{
+    width: 16rem;
+    height: 24rem;
+    bottom: 0;
+    background: var(--color-2);
+    position: absolute;
+}
+.heroin-img-lg{
+    position: relative;
+    left: 1rem;
+    bottom: 1rem;
+    filter: saturate(0) brightness(0.3);
+}
+.heroin-img-sm{
+    position: absolute;
+    height: 20rem;
+    width: 20rem;
+    left: 9rem;
+    top:4rem;
+    overflow: hidden;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+.about-img:hover .heroin-img-sm{ 
+    opacity: 0;
+}
+.about-img:hover .heroin-img-lg{
+    filter: brightness(1) saturate(1);
+    left: 0;
+    bottom: 0;
+    border: 1rem solid var(--color-2);
+} 
+.about-right{
+    margin-left: 3rem;
+}
+.about-right p{
+    color: var(--color-light);
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 16px;
+}
+.about-em{
+    background: var(--color-3);
+}
+/* .................END ABOUT SECTION..................  */
+
+/* .................START GALLERY SECTION..................  */
+#Gallery{
+    margin-top: 12rem; 
+}
+.gallery-top{
+    display: flex;
+    justify-content: space-between;
+
+}
+#Gallery .em{
+    background: var(--color-4);
+}
+.gallery-top h2{
+
+    color: var(--color-1);
+}
+#Gallery p{
+    color: var(--color-light);
+    margin: 3rem auto;
+    font-size: 16px;
+}
+
+.swiper-wrapper{
+    margin-bottom: 3rem;
+    height: 26rem;   
+}
+.swiper-slide{
+    max-height: 27rem;
+    overflow: hidden;
+    /* height: fit-content;    */
+    border: .5rem solid var(--color-1);
+    object-fit: cover;
+}
+.swiper-slide img{
+    height: 100%;
+    filter: saturate(0) brightness(.7);
+}
+.swiper-slide:hover{
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: .5rem var(--color-2) solid;
+}
+.swiper-slide:hover img{    
+    filter: saturate(1) brightness(1);
+}
+.swiper-pagination-bullet{
+    background: var(--color-2);
+}
+/* .................END GLLERY SECTION..................  */
+
+/* .................START EXHIBITION  SECTION..................  */
+#Exhibitions{
+    padding-top: 10rem;
+}
+.exhibition-container{
+    position: relative;
+}
+.exhibition-em{
+    width: 26rem;
+    top: 0;
+    position: absolute;
+    right: 14rem;
+}
+.exhibition-title{
+    color: var(--color-1);
+}
+.exhibition-text{
+    display: grid;
+    grid-template-columns: auto 10rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem auto;
+}
+.exhibition-text p{
+    color: var(--color-light);
+}
+.exhibition-gallery{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    margin-top: 5rem;
+}
+.exhibition-gallery-img{
+    border: .5rem var(--color-2) solid;
+    height: 24rem;
+    object-fit: cover;
+}
+.exhibition-gallery-img:nth-child(1){
+    grid-row: 1/3;
+    height: auto;
+}
+.exhibition-gallery-img:nth-child(4){
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+.exhibition-gallery-img img{
+    height: 100%; 
+    filter: saturate(0) brightness(.7);
+}
+.exhibition-gallery-img:hover{
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: .5rem var(--color-1) solid;
+}
+.exhibition-gallery-img:hover img{
+    filter: saturate(1) brightness(1);  
+}
+/* .................END EXHIBITION SECTION..................  */
+
+
+/* ...........START FOOTER .............. */
+footer{
+    margin-top: 10rem;
+    padding: 2rem 0;
+    background: var(--color-4);
+}
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-container ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 0;
+}
+.footer-container .nav-social{
+    flex-direction: row;
+    gap: 1rem;
+}
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 0;
+    align-items: center;   
+}
+.menu{
+    display: none;   
+}
+.menu img{
+    height: 2rem ;
+    width: 2rem;
+    padding: .3rem;
+    border-radius: .5rem;
+}
+
+/* ..........END FOOTER SETCTION........... */
+
+
+
+/* ----------------------------RESPONSIVE---------------------------- */
+@media (max-width:1220px) {
+    .container{
+        position: relative;
+    }
+    h1{
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    h2{
+        font-size: 2rem;        
+    }
+    nav .nav-social{
+        display: none;
+    
+    }
+    .nav-link{
+        position: absolute;
+        flex-direction: column;  
+        width: 250px;     
+        top: 100%;
+        background: var(--color-1);
+        right: 0;
+        align-items:  center; 
+        gap: 0;       
+        display: none; 
+        box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.9);
+    }
+    .nav-link li{
+        width: 100%;
+        text-align: center;
+        height: 100%;  
+        padding: 1.6rem 0;           
+    }
+    .nav-link li:hover{
+        background: var(--color-6);
+    }
+    .nav-link li:hover a{
+        font-size: 18px;
+    }
+   .menu{
+    display: block;
+   }
+   .open{
+    display: block;
+    background-color: var(--color-2);
+   }
+  .close{
+    display: none;
+    background: var(--color-1);
+   }
+   /* ----------Header---------------- */
+   header{
+    height: fit-content;
+    padding: 14rem 0 12rem;
+   }
+   .hero-img-bg, 
+   .hero-img-sm{
+    display: none;
+   }
+   .header-container{
+    grid-template-columns: 40% 54%;
+    gap: 6%;
+    margin: 0 auto;
+   }
+   .hero-img-lg{
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: 1rem solid var(--color-1);
+    filter: saturate(1) brightness(1);
+    border-radius: 15rem 15rem 0 0;  
+    overflow: hidden;
+   }
+   .em{
+    display: none;
+   }
+   .contact-btn-lg{
+    display: none;
+   }
+   .header-right-content p{
+    width: 100%;
+   }
+   .frames-container{
+    display: none;
+   }
+   .header-btn-mid{
+    display: inline-block;
+    margin-top: 2rem;
+    padding: .6rem 1.6rem;
+    background:  linear-gradient(var(--color-1), var(--color-5));
+    border-radius: .3rem;
+    
+   }
+   .header-btn-mid:hover{
+    background: var(--color-1);
+   }
+    
+   /* ----------About---------------- */
+   .about-container{
+    grid-template-columns:0 40% 54%;
+    gap: 6%;   
+   }
+   .about-img-bg,.heroin-img-sm{
+    display: none;
+   }
+   .heroin-img-lg{
+    filter: saturate(1) brightness(1);
+    /* width: 100%; */
+    bottom: 0;
+    left: 0;    
+   }
+   .about-img:hover .heroin-img-lg{
+    border: none;
+   }
+   .about-right{
+    margin: 0;
+   }
+   .about-right p{  
+    width: 90%;  
+   }
+   /* ----------Gallery---------------- */
+   #Gallery{
+    margin-top: 8rem; 
+}
+   #Gallery p{
+    width: 100%;
+    margin: 2rem 0;
+   }
+    /* ----------Exhibitions---------------- */
+    .exhibition-text{
+        margin-top: 2rem ;           
+    }
+    .exhibition-text p{
+        width: 100%;
+    }
+    .exhibition-gallery{
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+    .exhibition-gallery-img{
+        border: none;
+    }
+    .exhibition-gallery-img:hover{
+        border: none;
+    }
+}
+@media (max-width:991px) {
+    .header-container h1{
+        margin-top: 1rem;
+    }
+    .header-container P{
+        margin-top: 1rem;
+    }
+    .header-btn-mid{
+        margin-top: 1rem;
+    }
+    .about-right p{
+         margin: .7rem;
+    }
+}
+@media (max-width:768px) {
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.9rem;
+    }
+    /* ////////////Header////////////// */
+    header{
+        padding-top: 9rem;
+        padding-bottom: 6rem ;
+    }
+    .header-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;    
+        text-align: center;  
+    }
+    .header-tag{
+        margin: auto;
+    }
+    .hero-img-lg{
+        width: 80%;
+        margin: 0 auto;
+        height: fit-content;
+        overflow: hidden;   
+        border-radius: 15rem 15rem 0 0;    
+    }
+    /*//////////// About////////// */
+    .about-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;       
+    }
+   .about-right p{
+    width: 100%;
+   }
+   .swiper-slide{
+    border: 0;
+   }
+     /*//////////// Gallery////////// */
+     #Gellery{
+        margin-top: 6rem;
+     }
+   .swiper-slide:hover{
+    border: none;
+   }
+    /*//////////// Exhibitions////////// */
+    #Exhibitions{
+        padding-top: 6rem;
+    }
+   .exhibition-text{
+    width: 100%;
+    display: flex;
+   }
+   .exhibition-gallery{
+    grid-template-columns: 1fr;
+    display: block;
+   }
+   .exhibition-gallery-img{
+    margin-bottom: 1rem;
+   }
+    /*//////////// Footer////////// */
+    footer{
+        margin-top: 2rem;
+    }
+    .footer-container{
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+/* ----------------------------RESPONSIVE---------------------------- */
